@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Create room</h2>
+    <button onclick="redirect()">Create</button>
+    <script>
+        function redirect() {
+            fetch('/createroom', {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' }
+            }).then((res) => {
+                return res.json()
+            }).then((data) => {
+                location.href = '/' + data.key
+            })
+                .catch((e) => {
+                    console.log(e)
+                })
+        }
+    </script>
+</body>
+
+</html>
