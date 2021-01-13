@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "concurrently \"node server.js\" \"peerjs --port 3001\""
+    "start": "node server.js"
   },
   "author": "Marin Dedic",
   "license": "ISC",
