@@ -10,21 +10,13 @@
 <body>
     <h2>Create room</h2>
     <button onclick="redirect()">Create</button>
-    <script>
-        function redirect() {
-            fetch('/createroom', {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' }
-            }).then((res) => {
-                return res.json()
-            }).then((data) => {
-                location.href = '/' + data.key
-            })
-                .catch((e) => {
-                    console.log(e)
-                })
-        }
-    </script>
+    <br><br>
+
+        <input type="text" id="roomId" placeholder="Room ID">
+        <button id="joinButton">Join</button>
+
+
+        <script src="home.js"></script>
 </body>
 
 </html>
